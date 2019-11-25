@@ -5,10 +5,10 @@ public class SeasonTest {
     public static void main(String[] args) {
         String data = enterData();
         String[] seasonMonths = Season.getSeason(data);
-        System.out.println(Arrays.toString(seasonMonths));
+        Season.showInfo(seasonMonths);
     }
 
-        private static String enterData() {
+    private static String enterData() {
         Scanner input = new Scanner(System.in);
         System.out.println("Wprowadź porę roku");
         String data = input.nextLine();

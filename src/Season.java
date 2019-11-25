@@ -23,9 +23,12 @@ enum Season {
         return months;
     }
 
-    @Override
-    public String toString() {
-        return "Sezon: " + plName + ", miesiące: " + Arrays.toString(months);
+    static void showInfo(String[] seasonMonths) {
+        if (seasonMonths != null) {
+            System.out.println(Arrays.toString(seasonMonths));
+        } else {
+            System.out.println("Nie ma takiej pory roku.");
+        }
     }
 
     static String[] getSeason(String data) {
@@ -39,7 +42,7 @@ enum Season {
             case "ZIMA":
                 return Season.WINTER.getMonths();
             default:
-                return new String[]{"Nie ma takiej pory roku."};
+                return null;
         }
     }
 }
