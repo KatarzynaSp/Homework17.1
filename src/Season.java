@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
- enum Season {
+enum Season {
 
     SPRING("wiosna", new String[]{"marzec", "kwiecień", "maj"}),
     SUMMER("lato", new String[]{"czerwiec", "lipiec", "sierpień"}),
@@ -26,5 +26,20 @@ import java.util.Arrays;
     @Override
     public String toString() {
         return "Sezon: " + plName + ", miesiące: " + Arrays.toString(months);
+    }
+
+    static String[] getSeason(String data) {
+        switch (data.toUpperCase()) {
+            case "WIOSNA":
+                return Season.SPRING.getMonths();
+            case "LATO":
+                return Season.SUMMER.getMonths();
+            case "JESIEŃ":
+                return Season.AUTUMN.getMonths();
+            case "ZIMA":
+                return Season.WINTER.getMonths();
+            default:
+                return new String[]{"Nie ma takiej pory roku."};
+        }
     }
 }
